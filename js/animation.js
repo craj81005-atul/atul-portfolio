@@ -1,0 +1,1 @@
+/* Compatibility file for older exports. Page animations are initialized in script.js through AOS. */

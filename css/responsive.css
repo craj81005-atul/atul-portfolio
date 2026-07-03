@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Responsive Breakpoints & Media Queries
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Extra Large Devices (Large Desktops, 1200px and down)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199.98px) {
+    :root {
+        --section-padding: 70px 0;
+    }
+
+    .display-3 {
+        font-size: 3.5rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Large Devices (Desktops, 992px and down)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    :root {
+        --section-padding: 60px 0;
+    }
+
+    .display-3 {
+        font-size: 3rem;
+    }
+
+    /* Navbar Adjustments */
+    .navbar-collapse {
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-top: 1rem;
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--glass-border);
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link::after {
+        display: none; /* Remove hover underline on mobile */
+    }
+
+    #theme-toggle {
+        display: block;
+        margin: 1rem auto 0;
+    }
+
+    /* Hero Section */
+    #hero {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .cta-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cta-group .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 !important; /* Override standard margins */
+    }
+
+    /* About Section */
+    .about-img-wrapper {
+        max-width: 400px;
+        margin: 0 auto 2rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Medium Devices (Tablets, 768px and down)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    :root {
+        --section-padding: 50px 0;
+    }
+
+    .display-3 {
+        font-size: 2.5rem;
+    }
+
+    /* Timeline Adjustments for Mobile */
+    .timeline {
+        padding-left: 2rem;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-icon {
+        left: -1rem;
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+    }
+
+    .timeline-content {
+        padding: 1.5rem;
+    }
+
+    /* Statistics Counter */
+    #counter-wrap .col-sm-6 {
+        margin-bottom: 2rem;
+    }
+    
+    #counter-wrap .col-sm-6:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Small Devices (Landscape Phones, 576px and down)
+   -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+    .display-3 {
+        font-size: 2rem;
+    }
+
+    .h3 {
+        font-size: 1.5rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* Contact Form Mobile Optimization */
+    .contact-form {
+        padding: 2rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Hover Effects / Touch Devices Optimization
+   -------------------------------------------------------------------------- */
+@media (hover: none) {
+    /* Disable complex hover effects on touch devices to prevent sticky states */
+    .hover-lift:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm) !important;
+    }
+    
+    .btn-primary:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+@media (max-width: 575.98px) {
+  body { font-size: 15px; }
+  .display-4 { font-size: 2rem; }
+  .section-padding { padding: 44px 0; }
+  .card-body, .card.p-4 { padding: 1.25rem !important; }
+  #back-to-top { right: 16px; bottom: 16px; }
+}
