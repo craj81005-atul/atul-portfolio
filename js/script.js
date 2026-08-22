@@ -1,86 +1,61 @@
 /**
  * Main JavaScript File
- * Handles UI interactions, library initializations, and animations.
+ * Handles UI interactions, library initializations, animations and contact workflow.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
-    // ==========================================================================
-    // Dynamic Year in Footer
-    // ==========================================================================
-    const yearSpan = document.getElementById('current-year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+    const LINKEDIN_URL = 'https://www.linkedin.com/in/atul7599';
 
-    // ==========================================================================
+    // Dynamic Year in Footer
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
     // Dark Mode Toggle
-    // ==========================================================================
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
-
-    // Check local storage for saved theme preference
     const savedTheme = localStorage.getItem('theme') || 'light';
     htmlElement.setAttribute('data-theme', savedTheme);
+
+    function updateThemeIcon(theme) {
+        if (!themeIcon) return;
+        themeIcon.classList.toggle('fa-moon', theme !== 'dark');
+        themeIcon.classList.toggle('fa-sun', theme === 'dark');
+    }
+
     updateThemeIcon(savedTheme);
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
+            const newTheme = htmlElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
         });
     }
 
-    function updateThemeIcon(theme) {
-        if (!themeIcon) return;
-        if (theme === 'dark') {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        } else {
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-        }
-    }
-
-    // ==========================================================================
-    // Sticky Navbar & Back to Top Button on Scroll
-    // ==========================================================================
+    // Sticky Navbar & Back to Top
     const navbar = document.getElementById('navbar');
     const backToTopBtn = document.getElementById('back-to-top');
 
     window.addEventListener('scroll', () => {
-        if (navbar) {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        }
-        if (backToTopBtn) {
-            backToTopBtn.classList.toggle('active', window.scrollY > 300);
-        }
+        if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+        if (backToTopBtn) backToTopBtn.classList.toggle('active', window.scrollY > 300);
     }, { passive: true });
 
     if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        backToTopBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
-    // ==========================================================================
-    // Library Initializations
-    // ==========================================================================
-
-    // 1. Initialize AOS (Animate On Scroll)
+    // AOS
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 800,
+            duration: 700,
             easing: 'ease-in-out',
             once: true,
             mirror: false,
@@ -88,44 +63,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Initialize Typed.js
-    const typedElement = document.getElementById('typed-text');
-    if (typedElement && typeof Typed !== 'undefined') {
-        new Typed('#typed-text', {
-            strings: [
-                'Accounting.',
-                'GST & Taxation.',
-                'Bookkeeping.',
-                'ERP Software Management.',
-                'Corporate Finance.'
-            ],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 2000,
-            loop: true
-        });
-    }
-
-    // 3. Initialize Particles.js (Lightweight Configuration)
+    // Particles.js — kept subtle for the hero background
     const particlesElement = document.getElementById('particles-js');
     if (particlesElement && typeof particlesJS !== 'undefined') {
         particlesJS('particles-js', {
             particles: {
-                number: { value: 30, density: { enable: true, value_area: 800 } },
+                number: { value: 24, density: { enable: true, value_area: 900 } },
                 color: { value: '#0057FF' },
                 shape: { type: 'circle' },
-                opacity: { value: 0.2, random: false },
-                size: { value: 3, random: true },
+                opacity: { value: 0.16, random: false },
+                size: { value: 2.5, random: true },
                 line_linked: {
                     enable: true,
-                    distance: 150,
+                    distance: 160,
                     color: '#0057FF',
-                    opacity: 0.1,
+                    opacity: 0.07,
                     width: 1
                 },
                 move: {
                     enable: true,
-                    speed: 1.5,
+                    speed: 1,
                     direction: 'none',
                     random: false,
                     straight: false,
@@ -141,96 +98,74 @@ document.addEventListener('DOMContentLoaded', () => {
                     resize: true
                 },
                 modes: {
-                    grab: { distance: 140, line_linked: { opacity: 0.3 } }
+                    grab: { distance: 140, line_linked: { opacity: 0.18 } }
                 }
             },
             retina_detect: true
         });
     }
 
-    // ==========================================================================
-    // Number Counter Animation via Intersection Observer
-    // ==========================================================================
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200; // Lower is faster
+    // Contact form: there is no backend endpoint configured, so do not pretend
+    // the form sends email. Instead, copy the message and open LinkedIn.
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
 
-    const startCounting = (counter) => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = target / speed;
-
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 15);
-            } else {
-                counter.innerText = target + (target > 10 ? '+' : ''); // Add '+' for higher numbers
+            if (!contactForm.checkValidity()) {
+                contactForm.classList.add('was-validated');
+                return;
             }
-        };
-        updateCount();
-    };
 
-    if ('IntersectionObserver' in window) {
-        const counterObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    startCounting(entry.target);
-                    observer.unobserve(entry.target); // Run once
-                }
-            });
-        }, { threshold: 0.5 });
+            const name = document.getElementById('name')?.value.trim() || '';
+            const email = document.getElementById('email')?.value.trim() || '';
+            const subject = document.getElementById('subject')?.value.trim() || '';
+            const message = document.getElementById('message')?.value.trim() || '';
 
-        counters.forEach(counter => {
-            counterObserver.observe(counter);
+            const contactMessage = [
+                `Hello Atul,`,
+                ``,
+                `Name: ${name}`,
+                `Email: ${email}`,
+                `Subject: ${subject}`,
+                ``,
+                message
+            ].join('\n');
+
+            try {
+                await navigator.clipboard.writeText(contactMessage);
+            } catch (error) {
+                // Clipboard can be blocked by browser permissions; opening LinkedIn
+                // still gives the visitor a working contact path.
+            }
+
+            let status = document.getElementById('contact-status');
+            if (!status) {
+                status = document.createElement('div');
+                status.id = 'contact-status';
+                status.className = 'alert alert-success mt-3 mb-0';
+                contactForm.appendChild(status);
+            }
+            status.textContent = 'Your message has been copied. LinkedIn will open so you can send it to Atul.';
+
+            window.open(LINKEDIN_URL, '_blank', 'noopener,noreferrer');
         });
-    } else {
-        // Fallback for older browsers
-        counters.forEach(counter => startCounting(counter));
     }
+
+    // Close mobile navbar after navigation
+    document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
+        link.addEventListener('click', () => {
+            const nav = document.getElementById('navbarNav');
+            if (nav && nav.classList.contains('show') && window.bootstrap) {
+                window.bootstrap.Collapse.getOrCreateInstance(nav).hide();
+            }
+        });
+    });
+
+    // Generic form validation for any additional forms
+    document.querySelectorAll('form').forEach((form) => {
+        form.addEventListener('submit', () => {
+            form.classList.add('was-validated');
+        }, { capture: true });
+    });
 });
-
-// Production enhancements
-(() => {
-  const printResume = document.getElementById('print-resume');
-  if (printResume) {
-    printResume.addEventListener('click', (event) => {
-      event.preventDefault();
-      window.print();
-    });
-  }
-
-  document.querySelectorAll('form').forEach((form) => {
-    form.addEventListener('submit', (event) => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    });
-  });
-
-  document.querySelectorAll('.navbar-nav .nav-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      const nav = document.getElementById('navbarNav');
-      if (nav && nav.classList.contains('show') && window.bootstrap) {
-        window.bootstrap.Collapse.getOrCreateInstance(nav).hide();
-      }
-    });
-  });
-
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach((item) => {
-        item.classList.toggle('active', item === btn);
-        item.classList.toggle('btn-primary', item === btn);
-        item.classList.toggle('btn-outline-primary', item !== btn);
-      });
-      const filterValue = btn.dataset.filter;
-      portfolioItems.forEach((item) => {
-        item.hidden = !(filterValue === 'all' || item.classList.contains(filterValue));
-      });
-    });
-  });
-})();
