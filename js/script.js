@@ -105,10 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Contact form: there is no backend endpoint configured, so do not pretend
-    // the form sends email. Instead, copy the message and open LinkedIn.
+    // Contact form: no backend endpoint is configured, so the site does not
+    // pretend to send email. The visitor's message is copied and LinkedIn opens.
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        if (submitButton) {
+            submitButton.innerHTML = 'Copy & Continue to LinkedIn <i class="fa-brands fa-linkedin ms-2"></i>';
+        }
+
         contactForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
@@ -123,20 +128,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = document.getElementById('message')?.value.trim() || '';
 
             const contactMessage = [
-                `Hello Atul,`,
-                ``,
+                'Hello Atul,',
+                '',
                 `Name: ${name}`,
                 `Email: ${email}`,
                 `Subject: ${subject}`,
-                ``,
+                '',
                 message
             ].join('\n');
 
             try {
                 await navigator.clipboard.writeText(contactMessage);
             } catch (error) {
-                // Clipboard can be blocked by browser permissions; opening LinkedIn
-                // still gives the visitor a working contact path.
+                // Clipboard permissions may be blocked; LinkedIn still opens.
             }
 
             let status = document.getElementById('contact-status');
@@ -160,12 +164,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.bootstrap.Collapse.getOrCreateInstance(nav).hide();
             }
         });
-    });
-
-    // Generic form validation for any additional forms
-    document.querySelectorAll('form').forEach((form) => {
-        form.addEventListener('submit', () => {
-            form.classList.add('was-validated');
-        }, { capture: true });
     });
 });
