@@ -166,3 +166,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Replace the temporary initials with the uploaded professional portrait.
+document.addEventListener('DOMContentLoaded', () => {
+    const profilePlaceholder = document.querySelector('#about .rounded-circle.bg-primary');
+    if (!profilePlaceholder) return;
+
+    const profileImage = document.createElement('img');
+    profileImage.src = 'images/atul-kumar-profile.png.png';
+    profileImage.alt = 'Atul Kumar — Accounting Specialist';
+    profileImage.width = 150;
+    profileImage.height = 150;
+    profileImage.loading = 'lazy';
+    profileImage.decoding = 'async';
+    profileImage.style.width = '150px';
+    profileImage.style.height = '150px';
+    profileImage.style.objectFit = 'cover';
+    profileImage.style.objectPosition = 'center top';
+    profileImage.style.borderRadius = '50%';
+    profileImage.style.display = 'block';
+    profileImage.style.margin = '0 auto';
+    profileImage.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.12)';
+
+    profilePlaceholder.replaceWith(profileImage);
+});
