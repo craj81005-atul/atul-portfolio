@@ -1,12 +1,13 @@
 /**
  * Main JavaScript File
- * Handles UI interactions, library initializations, animations and contact workflow.
+ * Handles UI interactions, theme switching, animations and navigation helpers.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
     const LINKEDIN_URL = 'https://www.linkedin.com/in/atul7599';
+    const htmlElement = document.documentElement;
 
     // Dynamic Year in Footer
     const yearSpan = document.getElementById('current-year');
@@ -14,22 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dark Mode Toggle
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const htmlElement = document.documentElement;
     const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    htmlElement.setAttribute('data-theme', savedTheme);
+    const storedTheme = localStorage.getItem('theme');
+    const initialTheme = storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : 'light';
+    htmlElement.setAttribute('data-theme', initialTheme);
 
     function updateThemeIcon(theme) {
         if (!themeIcon) return;
         themeIcon.classList.toggle('fa-moon', theme !== 'dark');
         themeIcon.classList.toggle('fa-sun', theme === 'dark');
+        if (themeToggleBtn) {
+            themeToggleBtn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+            themeToggleBtn.setAttribute('title', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        }
     }
 
-    updateThemeIcon(savedTheme);
+    updateThemeIcon(initialTheme);
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            const newTheme = htmlElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
@@ -40,10 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const backToTopBtn = document.getElementById('back-to-top');
 
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
         if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
         if (backToTopBtn) backToTopBtn.classList.toggle('active', window.scrollY > 300);
-    }, { passive: true });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', (event) => {
@@ -73,40 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 shape: { type: 'circle' },
                 opacity: { value: 0.16, random: false },
                 size: { value: 2.5, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 160,
-                    color: '#0057FF',
-                    opacity: 0.07,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 1,
-                    direction: 'none',
-                    random: false,
-                    straight: false,
-                    out_mode: 'out',
-                    bounce: false
-                }
+                line_linked: { enable: true, distance: 160, color: '#0057FF', opacity: 0.07, width: 1 },
+                move: { enable: true, speed: 1, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
             },
             interactivity: {
                 detect_on: 'canvas',
-                events: {
-                    onhover: { enable: true, mode: 'grab' },
-                    onclick: { enable: false },
-                    resize: true
-                },
-                modes: {
-                    grab: { distance: 140, line_linked: { opacity: 0.18 } }
-                }
+                events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: false }, resize: true },
+                modes: { grab: { distance: 140, line_linked: { opacity: 0.18 } } }
             },
             retina_detect: true
         });
     }
 
-    // Contact form: no backend endpoint is configured, so the site does not
-    // pretend to send email. The visitor's message is copied and LinkedIn opens.
+    // Contact form fallback: no email backend is configured.
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         const submitButton = contactForm.querySelector('button[type="submit"]');
@@ -122,25 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const name = document.getElementById('name')?.value.trim() || '';
-            const email = document.getElementById('email')?.value.trim() || '';
-            const subject = document.getElementById('subject')?.value.trim() || '';
-            const message = document.getElementById('message')?.value.trim() || '';
-
+            const getValue = (id) => document.getElementById(id)?.value.trim() || '';
             const contactMessage = [
                 'Hello Atul,',
                 '',
-                `Name: ${name}`,
-                `Email: ${email}`,
-                `Subject: ${subject}`,
+                `Name: ${getValue('name')}`,
+                `Email: ${getValue('email')}`,
+                `Subject: ${getValue('subject')}`,
                 '',
-                message
+                getValue('message')
             ].join('\n');
 
             try {
-                await navigator.clipboard.writeText(contactMessage);
+                if (navigator.clipboard?.writeText) {
+                    await navigator.clipboard.writeText(contactMessage);
+                }
             } catch (error) {
-                // Clipboard permissions may be blocked; LinkedIn still opens.
+                // Clipboard access can be denied by the browser; navigation still works.
             }
 
             let status = document.getElementById('contact-status');
@@ -151,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 contactForm.appendChild(status);
             }
             status.textContent = 'Your message has been copied. LinkedIn will open so you can send it to Atul.';
-
             window.open(LINKEDIN_URL, '_blank', 'noopener,noreferrer');
         });
     }
@@ -165,28 +148,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
-
-// Replace the temporary initials with the uploaded professional portrait.
-document.addEventListener('DOMContentLoaded', () => {
-    const profilePlaceholder = document.querySelector('#about .rounded-circle.bg-primary');
-    if (!profilePlaceholder) return;
-
-    const profileImage = document.createElement('img');
-    profileImage.src = 'images/atul-kumar-profile.png.png';
-    profileImage.alt = 'Atul Kumar — Accounting Specialist';
-    profileImage.width = 150;
-    profileImage.height = 150;
-    profileImage.loading = 'lazy';
-    profileImage.decoding = 'async';
-    profileImage.style.width = '150px';
-    profileImage.style.height = '150px';
-    profileImage.style.objectFit = 'cover';
-    profileImage.style.objectPosition = 'center top';
-    profileImage.style.borderRadius = '50%';
-    profileImage.style.display = 'block';
-    profileImage.style.margin = '0 auto';
-    profileImage.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.12)';
-
-    profilePlaceholder.replaceWith(profileImage);
 });
