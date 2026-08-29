@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://craj81005-atul.github.io/atul-portfolio/sitemap.xml
