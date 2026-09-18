@@ -1,172 +1,864 @@
-/* ==========================================================================
-   Responsive Breakpoints & Media Queries
-   ========================================================================== */
+/* ============================================
+   ATUL KUMAR PORTFOLIO - RESPONSIVE STYLES
+   Mobile-First Approach
+   ============================================ */
 
-/* --------------------------------------------------------------------------
-   Extra Large Devices (Large Desktops, 1200px and down)
-   -------------------------------------------------------------------------- */
-@media (max-width: 1199.98px) {
-    :root {
-        --section-padding: 70px 0;
-    }
+/* ============================================
+   BASE MOBILE STYLES (up to 576px)
+   ============================================ */
 
-    .display-3 {
-        font-size: 3.5rem;
-    }
+body {
+    font-size: 1rem;
 }
 
-/* --------------------------------------------------------------------------
-   Large Devices (Desktops, 992px and down)
-   -------------------------------------------------------------------------- */
-@media (max-width: 991.98px) {
-    :root {
-        --section-padding: 60px 0;
-    }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
 
-    .display-3 {
+.navbar-custom {
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+}
+
+.brand-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+}
+
+.brand-text {
+    font-size: 1rem;
+}
+
+section {
+    padding: 3rem 0;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section {
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    margin: 1rem 0;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-cta-group {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+/* Navigation Mobile Menu */
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.75rem;
+}
+
+.navbar-toggler:focus {
+    outline: 2px solid var(--color-primary);
+}
+
+.navbar-collapse {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--color-glass-light);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 999;
+}
+
+.navbar-nav {
+    gap: 0.5rem !important;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-link {
+    padding: 1rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] .nav-link {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link:after {
+    display: none;
+}
+
+.nav-link.active:after,
+.nav-link:hover:after {
+    display: none;
+}
+
+.nav-link.active {
+    background: var(--color-primary-light);
+    border-radius: 0.5rem;
+    margin: 0 0.5rem;
+}
+
+/* About Section */
+.about-card {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.avatar-initials {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    font-size: 2.5rem;
+}
+
+.about-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+}
+
+.about-content {
+    padding: 1rem;
+}
+
+.about-highlights {
+    gap: 1rem;
+}
+
+.highlight-item {
+    gap: 0.75rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+.skill-card {
+    padding: 1.5rem;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-title {
+    font-size: 1.125rem;
+}
+
+/* Timeline */
+.timeline::before {
+    left: 12px;
+}
+
+.timeline-marker {
+    width: 32px;
+    height: 32px;
+    left: -4px;
+    font-size: 0.875rem;
+}
+
+.timeline-item {
+    padding-left: 60px;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-content {
+    padding: 1rem;
+}
+
+.timeline-title {
+    font-size: 1rem;
+}
+
+/* Education Grid */
+.education-grid {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+.education-card {
+    padding: 1.5rem;
+}
+
+.education-degree {
+    font-size: 1rem;
+}
+
+.education-university {
+    font-size: 0.875rem;
+}
+
+.detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+/* Projects Section */
+.project-showcase {
+    padding: 1.5rem;
+}
+
+.project-header {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-icon {
+    font-size: 2.5rem;
+}
+
+.project-title {
+    font-size: 1.125rem;
+}
+
+.project-tags {
+    gap: 0.5rem;
+}
+
+/* Services & Languages */
+.services-grid,
+.languages-grid {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+.service-card,
+.language-card {
+    padding: 1.5rem;
+}
+
+.service-icon,
+.language-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact-description {
+    font-size: 1rem;
+}
+
+.contact-links {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-button {
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.contact-button i {
+    font-size: 1.5rem;
+}
+
+.contact-info {
+    gap: 1rem;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer-content {
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-text {
+    flex: none;
+    min-width: auto;
+}
+
+.footer-copyright,
+.footer-credit {
+    font-size: 0.875rem;
+}
+
+.footer-social {
+    gap: 1rem;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+}
+
+/* Container */
+.container,
+.container-fluid {
+    padding: 0 1rem;
+}
+
+/* ============================================
+   TABLET STYLES (576px - 992px)
+   ============================================ */
+
+@media (min-width: 576px) {
+    body {
+        font-size: 1rem;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    
+    section {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.125rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .education-card {
+        padding: 2rem;
+    }
+    
+    .services-grid,
+    .languages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .about-card {
+        padding: 2rem;
+    }
+    
+    .avatar-initials {
+        width: 100px;
+        height: 100px;
         font-size: 3rem;
     }
-
-    /* Navbar Adjustments */
+    
+    .about-avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .timeline-item {
+        padding-left: 80px;
+    }
+    
+    .timeline-marker {
+        width: 40px;
+        height: 40px;
+        left: -12px;
+        font-size: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 0.875rem 2rem;
+        font-size: 1.125rem;
+    }
+    
     .navbar-collapse {
-        background: var(--glass-bg);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        padding: 1rem;
-        border-radius: var(--border-radius);
-        margin-top: 1rem;
-        box-shadow: var(--shadow-md);
-        border: 1px solid var(--glass-border);
+        position: static;
+        background: transparent;
+        border: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
-
-    .navbar-nav .nav-link {
-        margin: 0.5rem 0;
-        text-align: center;
+    
+    .navbar-nav {
+        gap: 0.5rem !important;
     }
-
-    .navbar-nav .nav-link::after {
-        display: none; /* Remove hover underline on mobile */
+    
+    .nav-item {
+        width: auto;
     }
-
-    #theme-toggle {
+    
+    .nav-link {
+        padding: 0.5rem 1rem !important;
+        border: none;
+        border-bottom: 2px solid transparent;
+    }
+    
+    .nav-link.active {
+        background: transparent;
+        margin: 0;
+    }
+    
+    .nav-link:after {
         display: block;
-        margin: 1rem auto 0;
     }
-
-    /* Hero Section */
-    #hero {
-        text-align: center;
-        padding-top: 100px;
+    
+    .project-showcase {
+        padding: 2rem;
     }
-
-    .cta-group {
-        display: flex;
-        flex-direction: column;
+    
+    .project-header {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    
+    .detail-item {
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
         gap: 1rem;
     }
-
-    .cta-group .btn {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 !important; /* Override standard margins */
+    
+    .contact-button {
+        flex-direction: row;
+        width: auto;
     }
-
-    /* About Section */
-    .about-img-wrapper {
-        max-width: 400px;
-        margin: 0 auto 2rem;
+    
+    .contact-links {
+        gap: 1.5rem;
     }
 }
 
-/* --------------------------------------------------------------------------
-   Medium Devices (Tablets, 768px and down)
-   -------------------------------------------------------------------------- */
-@media (max-width: 767.98px) {
+/* ============================================
+   DESKTOP STYLES (992px and above)
+   ============================================ */
+
+@media (min-width: 992px) {
+    body {
+        font-size: 1rem;
+    }
+    
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.25rem; }
+    h3 { font-size: 1.875rem; }
+    
+    section {
+        padding: 5rem 0;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+    }
+    
+    .hero-section {
+        min-height: 100vh;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.75rem;
+    }
+    
+    .hero-description {
+        font-size: 1.25rem;
+    }
+    
+    .hero-cta-group {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .hero-cta-group .btn {
+        width: auto;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .education-card {
+        padding: 2.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .languages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .about-card {
+        padding: 3rem;
+    }
+    
+    .avatar-initials {
+        width: 120px;
+        height: 120px;
+        font-size: 3.5rem;
+    }
+    
+    .about-avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .about-content {
+        padding: 0;
+    }
+    
+    .timeline-item {
+        padding-left: 80px;
+    }
+    
+    .timeline-marker {
+        width: 44px;
+        height: 44px;
+        left: -12px;
+        font-size: 1.125rem;
+    }
+    
+    .project-showcase {
+        padding: 3rem;
+    }
+    
+    .btn-lg {
+        padding: 1rem 2.5rem;
+        font-size: 1.125rem;
+    }
+    
+    .container {
+        max-width: 1200px;
+    }
+    
+    .navbar-custom {
+        padding: 1.25rem 0;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem !important;
+    }
+    
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .footer-text {
+        flex: 1;
+        text-align: left;
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP (1200px and above)
+   ============================================ */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    section {
+        padding: 6rem 0;
+    }
+    
+    .hero-title {
+        font-size: 3.75rem;
+    }
+    
+    .about-highlights {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .highlight-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   LANDSCAPE MODE ADJUSTMENTS
+   ============================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-scroll-indicator {
+        display: none;
+    }
+}
+
+/* ============================================
+   HIGH DPI / RETINA DISPLAYS
+   ============================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .scroll-wheel {
+        width: 3px;
+    }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        padding: 1rem 1.5rem;
+        min-height: 48px;
+        min-width: 48px;
+    }
+    
+    .btn:active {
+        transform: scale(0.98);
+    }
+    
+    .skill-card:hover,
+    .service-card:hover,
+    .education-card:hover,
+    .language-card:hover {
+        transform: none;
+    }
+    
+    .back-to-top {
+        bottom: 2rem;
+        right: 2rem;
+        width: 56px;
+        height: 56px;
+    }
+    
+    .timeline-content:hover {
+        transform: none;
+    }
+    
+    .contact-button:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
     :root {
-        --section-padding: 50px 0;
+        --color-bg-light: white;
+        --color-text-dark: black;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .navbar-custom,
+    .scroll-progress,
+    .back-to-top,
+    .hero-scroll-indicator,
+    .navbar-toggler {
+        display: none !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        padding: 1rem 0;
+    }
+    
+    .hero-section {
+        min-height: auto;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    .glass-effect {
+        background: white;
+        border: 1px solid #ccc;
+        backdrop-filter: none;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+    
+    .education-grid,
+    .skills-grid,
+    .services-grid,
+    .languages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   DARK MODE RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+html[data-theme="dark"] .navbar-collapse {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+html[data-theme="dark"] .nav-link {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   ACCESSIBILITY ADJUSTMENTS
+   ============================================ */
+
+@media (prefers-contrast: more) {
+    :root {
+        --color-border-light: #333;
+        --color-border-medium: #666;
+    }
+    
+    .glass-effect {
+        border-width: 2px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme]) {
+        --color-bg-light: #0f172a;
+        --color-bg-secondary: #1a1f3a;
+        --color-text-dark: #f1f5f9;
+        --color-text-secondary: #cbd5e1;
+        --color-text-tertiary: #94a3b8;
+    }
+}
+
+/* ============================================
+   FINAL RESPONSIVE POLISH
+   ============================================ */
+
+@media (max-width: 575.98px) {
+    .container,
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
-    .display-3 {
-        font-size: 2.5rem;
+    .hero-section .container {
+        padding-top: 1rem;
+        padding-bottom: 4rem;
     }
 
-    /* Timeline Adjustments for Mobile */
-    .timeline {
-        padding-left: 2rem;
+    .hero-scroll-indicator {
+        bottom: 1rem;
+    }
+
+    .hero-scroll-indicator span {
+        font-size: .75rem;
+    }
+
+    .about-highlights {
+        flex-direction: column;
+    }
+
+    .highlight-item {
+        width: 100%;
+    }
+
+    .timeline-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .55rem;
+    }
+
+    .timeline-item {
+        padding-left: 52px;
     }
 
     .timeline::before {
-        left: 0;
+        left: 9px;
     }
 
-    .timeline-icon {
-        left: -1rem;
-        width: 24px;
-        height: 24px;
-        font-size: 0.8rem;
+    .timeline-marker {
+        left: -5px;
     }
 
-    .timeline-content {
-        padding: 1.5rem;
+    .project-showcase,
+    .about-card,
+    .skill-card,
+    .education-card,
+    .service-card,
+    .language-card {
+        border-radius: 1.15rem;
     }
 
-    /* Statistics Counter */
-    #counter-wrap .col-sm-6 {
-        margin-bottom: 2rem;
+    .contact-info {
+        align-items: flex-start;
     }
-    
-    #counter-wrap .col-sm-6:last-child {
-        margin-bottom: 0;
-    }
-}
-
-/* --------------------------------------------------------------------------
-   Small Devices (Landscape Phones, 576px and down)
-   -------------------------------------------------------------------------- */
-@media (max-width: 575.98px) {
-    .display-3 {
-        font-size: 2rem;
-    }
-
-    .h3 {
-        font-size: 1.5rem;
-    }
-
-    .section-title h2 {
-        font-size: 2rem;
-    }
-
-    .btn-lg {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
-
-    /* Contact Form Mobile Optimization */
-    .contact-form {
-        padding: 2rem !important;
-    }
-}
-
-/* --------------------------------------------------------------------------
-   Hover Effects / Touch Devices Optimization
-   -------------------------------------------------------------------------- */
-@media (hover: none) {
-    /* Disable complex hover effects on touch devices to prevent sticky states */
-    .hover-lift:hover {
-        transform: none;
-        box-shadow: var(--shadow-sm) !important;
-    }
-    
-    .btn-primary:hover {
-        transform: none;
-        box-shadow: none;
-    }
-}
-@media (max-width: 575.98px) {
-  body { font-size: 15px; }
-  .display-4 { font-size: 2rem; }
-  .section-padding { padding: 44px 0; }
-  .card-body, .card.p-4 { padding: 1.25rem !important; }
-  #back-to-top { right: 16px; bottom: 16px; }
 }
