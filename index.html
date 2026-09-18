@@ -3,196 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#0057FF">
-
-    <title>Atul Kumar | Accounting Specialist</title>
-    <meta name="description" content="Atul Kumar — Accounting Specialist focused on financial operations, tax compliance, data analysis, AI and business automation.">
+    
+    <!-- SEO & Meta -->
+    <title>Atul Kumar | Accounting Specialist | Financial Operations & Automation</title>
+    <meta name="description" content="Atul Kumar - Accounting Specialist with 3+ years in financial operations, tax compliance, data analysis, Excel automation, and AI business solutions. Based in Uttar Pradesh, India.">
+    <meta name="keywords" content="accounting, tax compliance, financial operations, data analysis, business automation, GST, Excel, VBA">
     <meta name="author" content="Atul Kumar">
-
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Atul Kumar | Accounting Specialist">
     <meta property="og:description" content="Accounting Specialist focused on financial operations, tax compliance, data analysis, AI and business automation.">
-
-    <meta name="twitter:card" content="summary">
+    <meta property="og:site_name" content="Atul Kumar Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Atul Kumar | Accounting Specialist">
     <meta name="twitter:description" content="Accounting Specialist focused on financial operations, tax compliance, data analysis, AI and business automation.">
-
+    
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Atul Kumar",
-      "jobTitle": "Accounting Specialist",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Budaun Sadar",
-        "addressRegion": "Uttar Pradesh",
-        "addressCountry": "IN"
-      },
-      "sameAs": ["https://www.linkedin.com/in/atul7599"]
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Atul Kumar",
+        "jobTitle": "Accounting Specialist",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Budaun Sadar",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "243601",
+            "addressCountry": "IN"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/atul7599"
+        ],
+        "knowsAbout": [
+            "Accounting",
+            "Tax Compliance",
+            "Financial Operations",
+            "Data Analysis",
+            "Business Automation",
+            "GST Compliance",
+            "Excel Automation",
+            "Google Sheets"
+        ]
     }
     </script>
-
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <script>
+        (() => {
+            try {
+                const saved = localStorage.getItem('portfolio-theme');
+                const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.dataset.theme = saved || (systemDark ? 'dark' : 'light');
+            } catch (_) {}
+        })();
+    </script>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top glassmorphism" aria-label="Main Navigation">
-        <div class="container">
-            <a class="navbar-brand fw-bold primary-color" href="#hero">Atul<span class="accent-color">.</span></a>
+    
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom" aria-label="Main Navigation">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#hero" aria-label="Atul Kumar - Back to top">
+                <span class="brand-icon">AK</span>
+                <span class="brand-text">Atul<span class="brand-dot">.</span></span>
+            </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <ul class="navbar-nav ms-auto align-items-center gap-2">
+                    <li class="nav-item"><a class="nav-link active" href="#hero" data-section="hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" data-section="about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills" data-section="skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience" data-section="experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education" data-section="education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-section="projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-section="contact">Contact</a></li>
                     <li class="nav-item ms-lg-3">
-                        <button id="theme-toggle" class="btn btn-icon" aria-label="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+                        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle Dark Mode" aria-pressed="false">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
+    
+    <!-- Main Content -->
     <main id="main-content">
-        <header id="hero" class="d-flex align-items-center position-relative">
-            <div id="particles-js" class="position-absolute w-100 h-100" aria-hidden="true"></div>
-            <div class="container position-relative z-index-1">
-                <div class="row align-items-center">
-                    <div class="col-lg-9 col-md-11" data-aos="fade-up" data-aos-duration="1000">
-                        <span class="badge bg-soft-primary text-primary mb-3">Accounting • Data Analysis • Automation</span>
-                        <h1 class="display-3 fw-bold text-dark">Atul <span class="primary-color">Kumar</span></h1>
-                        <h2 class="h3 text-secondary mb-4">Accounting Specialist | Data Analysis &amp; AI | Business Automation</h2>
-                        <p class="lead text-muted mb-5">Transforming financial operations through data analysis, tax compliance, accounting systems and practical business automation.</p>
-                        <div class="cta-group">
-                            <a href="#projects" class="btn btn-primary btn-lg rounded-pill me-3 shadow-sm ripple">View My Work</a>
-                            <a href="https://www.linkedin.com/in/atul7599" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-lg rounded-pill shadow-sm">LinkedIn <i class="fa-brands fa-linkedin ms-2"></i></a>
+        <!-- Hero Section -->
+        <header id="hero" class="hero-section">
+            <div class="hero-background">
+                <canvas id="canvas-background" aria-hidden="true"></canvas>
+            </div>
+            
+            <div class="container position-relative z-index-10">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-10" data-reveal>
+                        <div class="hero-content">
+                            <div class="hero-badge mb-4">
+                                <span>Accounting • Data Analysis • Automation</span>
+                            </div>
+                            
+                            <h1 class="hero-title">
+                                Atul <span class="accent">Kumar</span>
+                            </h1>
+                            
+                            <h2 class="hero-subtitle">
+                                Accounting Specialist | Financial Operations & Automation
+                            </h2>
+                            
+                            <p class="hero-description">
+                                Transforming financial operations through strategic data analysis, 
+                                comprehensive tax compliance, and practical business automation solutions.
+                            </p>
+                            
+                            <div class="hero-cta-group">
+                                <a href="#contact" class="btn btn-primary btn-lg">
+                                    <span>Get In Touch</span>
+                                    <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/atul7599" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-lg">
+                                    <i class="fab fa-linkedin me-2"></i>
+                                    <span>LinkedIn Profile</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                <span>Scroll to explore</span>
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
                 </div>
             </div>
         </header>
-
-        <section id="about" class="section-padding bg-light">
+        
+        <!-- About Section -->
+        <section id="about" class="section-about">
             <div class="container">
-                <div class="section-title text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-bold">About <span class="primary-color">Me</span></h2>
-                    <div class="divider mx-auto"></div>
+                <div class="section-header" data-reveal>
+                    <h2 class="section-title">About <span class="accent">Me</span></h2>
+                    <div class="section-divider"></div>
                 </div>
-                <div class="row align-items-center">
-                    <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-right">
-                        <div class="rounded shadow-lg p-5 bg-white text-center">
-                            <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width:150px;height:150px;font-size:3.5rem;font-weight:700;">AK</div>
-                            <h3 class="h4 fw-bold mt-4 mb-1">Atul Kumar</h3>
-                            <p class="text-muted mb-0">Accounting Specialist</p>
+                
+                <div class="row align-items-center gap-5">
+                    <div class="col-lg-5" data-reveal>
+                        <div class="about-card glass-effect">
+                            <div class="about-avatar">
+                                <div class="avatar-initials">AK</div>
+                            </div>
+                            <h3 class="about-name">Atul Kumar</h3>
+                            <p class="about-title">Accounting Specialist</p>
+                            <div class="about-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Budaun Sadar, Uttar Pradesh</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>3+ Years Experience</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-8 px-lg-5" data-aos="fade-left">
-                        <h3 class="fw-semibold mb-3">Accounting, Tax &amp; Business Operations</h3>
-                        <p class="text-muted">Dedicated Junior Accounts and Tax Professional with over 3 years of experience in managing financial operations, tax compliance, and business documentation.</p>
-                        <p class="text-muted">I focus on accounting systems, GST and Income Tax compliance, financial documentation, data analysis, Excel-based automation, Google Sheets automation and practical use of AI tools to improve business processes.</p>
-                        <ul class="list-unstyled row mt-4">
-                            <li class="col-sm-6 mb-3"><i class="fa-solid fa-check text-success me-2"></i> <strong>Location:</strong> Budaun Sadar, Uttar Pradesh</li>
-                            <li class="col-sm-6 mb-3"><i class="fa-solid fa-check text-success me-2"></i> <strong>Focus:</strong> Accounting &amp; Tax</li>
-                            <li class="col-sm-6 mb-3"><i class="fa-solid fa-check text-success me-2"></i> <strong>Strength:</strong> Data Analysis</li>
-                            <li class="col-sm-6 mb-3"><i class="fa-solid fa-check text-success me-2"></i> <strong>Interest:</strong> Business Automation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section-padding">
-            <div class="container">
-                <div class="section-title text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-bold">Core <span class="primary-color">Skills</span></h2>
-                    <div class="divider mx-auto"></div>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                        <div class="skill-card p-4 rounded shadow-sm hover-lift h-100">
-                            <i class="fa-solid fa-calculator fa-2x primary-color mb-3"></i>
-                            <h4 class="h5">Accounting &amp; Tax</h4>
-                            <p class="text-muted mb-0">Tally Prime, ERP 9, BUSY, GST, Income Tax, Financial Accounting, Bookkeeping, Bank Reconciliation and Tax Preparation.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="skill-card p-4 rounded shadow-sm hover-lift h-100">
-                            <i class="fa-solid fa-chart-line fa-2x primary-color mb-3"></i>
-                            <h4 class="h5">Data &amp; Automation</h4>
-                            <p class="text-muted mb-0">Advanced Excel, VBA/Macros, Data Analysis, Google Sheets Automation and practical AI tools.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="skill-card p-4 rounded shadow-sm hover-lift h-100">
-                            <i class="fa-solid fa-briefcase fa-2x primary-color mb-3"></i>
-                            <h4 class="h5">Professional Skills</h4>
-                            <p class="text-muted mb-0">Client Relations, Professional Communication, Legal Research, Documentation and Analytical Thinking.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section-padding bg-light">
-            <div class="container">
-                <div class="section-title text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-bold">Professional <span class="primary-color">Experience</span></h2>
-                    <div class="divider mx-auto"></div>
-                </div>
-                <div class="timeline position-relative">
-                    <div class="timeline-item" data-aos="fade-up">
-                        <div class="timeline-icon bg-primary text-white"><i class="fa-solid fa-briefcase"></i></div>
-                        <div class="timeline-content shadow-sm bg-white rounded p-4">
-                            <h3 class="h5 fw-bold">Account Assistant</h3>
-                            <h4 class="h6 text-muted mb-2">Not Registered on LinkedIn · Full-time</h4>
-                            <p class="small text-muted mb-3">Jul 2024 – Present · India · On-site</p>
-                            <p class="mb-0">Maintaining daily financial records, journal entries and ledger updates while supporting accounting operations, documentation and financial processes.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-aos="fade-up">
-                        <div class="timeline-icon bg-primary text-white"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                        <div class="timeline-content shadow-sm bg-white rounded p-4">
-                            <h3 class="h5 fw-bold">Accountant</h3>
-                            <h4 class="h6 text-muted mb-2">Kass Accountant</h4>
-                            <p class="small text-muted mb-3">Jul 2023 – Aug 2024 · Full-time</p>
-                            <p class="mb-0">Managed GST compliance, return preparation, GST data verification, tax records, compliance documentation and tax workings before filing.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section-padding">
-            <div class="container">
-                <div class="section-title text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-bold">Featured <span class="primary-color">Project</span></h2>
-                    <div class="divider mx-auto"></div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-9" data-aos="fade-up">
-                        <div class="p-4 p-md-5 rounded shadow-sm border bg-white">
-                            <div class="d-flex align-items-start gap-3">
-                                <div class="icon-box bg-soft-primary text-primary rounded-circle flex-shrink-0"><i class="fa-solid fa-database"></i></div>
-                                <div>
-                                    <h3 class="h4 fw-bold mb-1">BUSY ERP Accounting Management</h3>
-                                    <p class="text-muted mb-3">Jun 2025 – Present</p>
-                                    <p class="mb-0">Managed day-to-day accounting operations using BUSY ERP, including purchase and sales records, financial documentation, ledger management and business accounting workflows.</p>
+                    
+                    <div class="col-lg-7" data-reveal>
+                        <div class="about-content">
+                            <h3 class="about-section-title">Professional Overview</h3>
+                            <p class="about-text">
+                                I'm a dedicated Junior Accounts and Tax Professional with over 3 years of hands-on experience 
+                                managing financial operations, ensuring tax compliance, and handling comprehensive business documentation.
+                            </p>
+                            <p class="about-text">
+                                My expertise spans accounting systems, GST and Income Tax compliance, financial documentation, 
+                                data analysis, Excel-based automation, Google Sheets automation, and practical application of AI tools 
+                                to streamline and improve business processes.
+                            </p>
+                            
+                            <div class="about-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <div>
+                                        <strong>Core Focus:</strong>
+                                        <span>Accounting & Tax Compliance</span>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <div>
+                                        <strong>Specialization:</strong>
+                                        <span>Data Analysis & Automation</span>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check"></i>
+                                    <div>
+                                        <strong>Interest:</strong>
+                                        <span>Business Process Automation & AI Tools</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -200,93 +239,355 @@
                 </div>
             </div>
         </section>
-
-        <section id="education" class="section-padding bg-light">
+        
+        <!-- Skills Section -->
+        <section id="skills" class="section-skills">
             <div class="container">
-                <div class="section-title text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-bold">Education</h2>
-                    <div class="divider mx-auto"></div>
+                <div class="section-header" data-reveal>
+                    <h2 class="section-title">Core <span class="accent">Skills</span></h2>
+                    <div class="section-divider"></div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6 mb-4" data-aos="fade-right">
-                        <div class="education-card p-4 shadow-sm rounded border-start border-primary border-4 h-100 bg-white">
-                            <h3 class="h5 fw-bold">Bachelor of Commerce (B.Com)</h3>
-                            <h4 class="h6 text-muted">Mahatma Jyotiba Phule Rohilkhand University</h4>
-                            <span class="badge bg-soft-primary text-primary mb-3">Apr 2021 – Mar 2024</span>
-                            <p class="mb-0"><strong>Grade: 7.8</strong></p>
+                
+                <div class="skills-grid">
+                    <!-- Accounting & Tax -->
+                    <div class="skill-card glass-effect" data-reveal>
+                        <div class="skill-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3 class="skill-title">Accounting & Tax</h3>
+                        <p class="skill-description">
+                            Expertise in Tally Prime, ERP 9, BUSY, GST compliance, Income Tax preparation, 
+                            financial accounting, bookkeeping, and bank reconciliation.
+                        </p>
+                        <ul class="skill-list">
+                            <li><span class="skill-tag">Tally Prime</span></li>
+                            <li><span class="skill-tag">ERP 9</span></li>
+                            <li><span class="skill-tag">GST Compliance</span></li>
+                            <li><span class="skill-tag">Income Tax</span></li>
+                            <li><span class="skill-tag">BUSY</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Data & Automation -->
+                    <div class="skill-card glass-effect" data-reveal>
+                        <div class="skill-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="skill-title">Data & Automation</h3>
+                        <p class="skill-description">
+                            Advanced proficiency in Excel, VBA/Macros, data analysis, Google Sheets automation, 
+                            and practical application of AI tools for business efficiency.
+                        </p>
+                        <ul class="skill-list">
+                            <li><span class="skill-tag">Advanced Excel</span></li>
+                            <li><span class="skill-tag">VBA/Macros</span></li>
+                            <li><span class="skill-tag">Data Analysis</span></li>
+                            <li><span class="skill-tag">Google Sheets</span></li>
+                            <li><span class="skill-tag">AI Tools</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Professional Skills -->
+                    <div class="skill-card glass-effect" data-reveal>
+                        <div class="skill-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="skill-title">Professional Skills</h3>
+                        <p class="skill-description">
+                            Strong communication, client relations, legal research capabilities, meticulous documentation, 
+                            and analytical thinking skills.
+                        </p>
+                        <ul class="skill-list">
+                            <li><span class="skill-tag">Client Relations</span></li>
+                            <li><span class="skill-tag">Communication</span></li>
+                            <li><span class="skill-tag">Legal Research</span></li>
+                            <li><span class="skill-tag">Documentation</span></li>
+                            <li><span class="skill-tag">Analysis</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" class="section-experience">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <h2 class="section-title">Professional <span class="accent">Experience</span></h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-marker">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-content glass-effect">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Account Assistant</h3>
+                                <span class="timeline-badge">Current</span>
+                            </div>
+                            <p class="timeline-company">Not Registered on LinkedIn · Full-time</p>
+                            <p class="timeline-date">
+                                <i class="fas fa-calendar"></i>
+                                Jul 2024 – Present · India · On-site
+                            </p>
+                            <p class="timeline-description">
+                                Maintaining daily financial records, journal entries and ledger updates while supporting 
+                                accounting operations, documentation and comprehensive financial processes.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-lg-6 mb-4" data-aos="fade-left">
-                        <div class="education-card p-4 shadow-sm rounded border-start border-primary border-4 h-100 bg-white">
-                            <h3 class="h5 fw-bold">Master of Commerce (M.Com)</h3>
-                            <h4 class="h6 text-muted">Indira Gandhi National Open University (IGNOU), Delhi</h4>
-                            <span class="badge bg-soft-primary text-primary mb-3">Dec 2025 – Present</span>
-                            <p class="mb-0">Accounting and Finance &amp; Business Study</p>
+                    
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-marker">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="timeline-content glass-effect">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Accountant</h3>
+                                <span class="timeline-badge">Previous</span>
+                            </div>
+                            <p class="timeline-company">Kass Accountant</p>
+                            <p class="timeline-date">
+                                <i class="fas fa-calendar"></i>
+                                Jul 2023 – Aug 2024 · Full-time
+                            </p>
+                            <p class="timeline-description">
+                                Managed GST compliance, return preparation, GST data verification, tax records, 
+                                compliance documentation and comprehensive tax workings before filing.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="services" class="section-padding">
+        
+        <!-- Education Section -->
+        <section id="education" class="section-education">
             <div class="container">
-                <div class="section-title text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-bold">Professional <span class="primary-color">Services</span></h2>
-                    <div class="divider mx-auto"></div>
+                <div class="section-header" data-reveal>
+                    <h2 class="section-title">Education</h2>
+                    <div class="section-divider"></div>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-4"><div class="p-4 rounded shadow-sm text-center h-100 hover-lift"><i class="fa-solid fa-calculator fa-2x primary-color mb-3"></i><h3 class="h5">Accounting</h3><p class="text-muted mb-0">Accounting and financial accounting support.</p></div></div>
-                    <div class="col-md-4"><div class="p-4 rounded shadow-sm text-center h-100 hover-lift"><i class="fa-solid fa-book fa-2x primary-color mb-3"></i><h3 class="h5">Bookkeeping</h3><p class="text-muted mb-0">Organized books, ledgers and financial records.</p></div></div>
-                    <div class="col-md-4"><div class="p-4 rounded shadow-sm text-center h-100 hover-lift"><i class="fa-solid fa-file-invoice fa-2x primary-color mb-3"></i><h3 class="h5">Tax Preparation</h3><p class="text-muted mb-0">GST, Income Tax and small-business tax support.</p></div></div>
+                
+                <div class="education-grid">
+                    <!-- B.Com -->
+                    <div class="education-card glass-effect" data-reveal>
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="education-degree">Bachelor of Commerce (B.Com)</h3>
+                        <p class="education-university">Mahatma Jyotiba Phule Rohilkhand University</p>
+                        <div class="education-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Duration:</span>
+                                <span class="detail-value">Apr 2021 – Mar 2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Grade:</span>
+                                <span class="detail-value">7.8 CGPA</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- M.Com -->
+                    <div class="education-card glass-effect" data-reveal>
+                        <div class="education-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="education-degree">Master of Commerce (M.Com)</h3>
+                        <p class="education-university">Indira Gandhi National Open University (IGNOU), Delhi</p>
+                        <div class="education-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Duration:</span>
+                                <span class="detail-value">Dec 2025 – Present</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Specialization:</span>
+                                <span class="detail-value">Accounting & Finance</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <section id="languages" class="section-padding bg-dark text-white">
+        
+        <!-- Projects Section -->
+        <section id="projects" class="section-projects">
             <div class="container">
-                <div class="section-title text-center mb-5">
-                    <h2 class="fw-bold">Languages</h2>
-                    <div class="divider mx-auto"></div>
+                <div class="section-header" data-reveal>
+                    <h2 class="section-title">Featured <span class="accent">Project</span></h2>
+                    <div class="section-divider"></div>
                 </div>
-                <div class="row justify-content-center text-center">
-                    <div class="col-sm-4 mb-3"><h3 class="h5">English</h3><p class="text-white-50 mb-0">Native or bilingual proficiency</p></div>
-                    <div class="col-sm-4 mb-3"><h3 class="h5">Hindi</h3><p class="text-white-50 mb-0">As listed on LinkedIn</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section-padding">
-            <div class="container">
-                <div class="section-title text-center mb-5" data-aos="fade-up">
-                    <h2 class="fw-bold">Let's <span class="primary-color">Connect</span></h2>
-                    <div class="divider mx-auto"></div>
-                </div>
+                
                 <div class="row justify-content-center">
-                    <div class="col-lg-7 text-center" data-aos="fade-up">
-                        <p class="lead text-muted">For professional opportunities, accounting work, business automation discussions or collaboration, connect with me on LinkedIn.</p>
-                        <a href="https://www.linkedin.com/in/atul7599" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg rounded-pill px-5">Connect on LinkedIn <i class="fa-brands fa-linkedin ms-2"></i></a>
+                    <div class="col-lg-10" data-reveal>
+                        <div class="project-showcase glass-effect">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="project-title-section">
+                                    <h3 class="project-title">BUSY ERP Accounting Management</h3>
+                                    <span class="project-date">
+                                        <i class="fas fa-calendar"></i>
+                                        Jun 2025 – Present
+                                    </span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Managed day-to-day accounting operations using BUSY ERP, including purchase and sales records, 
+                                financial documentation, ledger management and comprehensive business accounting workflows.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">BUSY ERP</span>
+                                <span class="tag">Accounting</span>
+                                <span class="tag">Financial Documentation</span>
+                                <span class="tag">Ledger Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="section-services">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <h2 class="section-title">Professional <span class="accent">Services</span></h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card glass-effect" data-reveal>
+                        <div class="service-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3 class="service-title">Accounting Services</h3>
+                        <p class="service-description">
+                            Comprehensive accounting and financial accounting support for businesses of all sizes.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card glass-effect" data-reveal>
+                        <div class="service-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="service-title">Bookkeeping</h3>
+                        <p class="service-description">
+                            Organized books, ledgers and meticulous financial records management.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card glass-effect" data-reveal>
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3 class="service-title">Tax Preparation</h3>
+                        <p class="service-description">
+                            GST, Income Tax and small-business tax preparation and compliance support.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Languages Section -->
+        <section id="languages" class="section-languages">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <h2 class="section-title">Languages</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="languages-grid">
+                    <div class="language-card glass-effect" data-reveal>
+                        <div class="language-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="language-name">English</h3>
+                        <p class="language-level">Native or Bilingual Proficiency</p>
+                    </div>
+                    
+                    <div class="language-card glass-effect" data-reveal>
+                        <div class="language-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="language-name">Hindi</h3>
+                        <p class="language-level">Professional Working Proficiency</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section-contact">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8" data-reveal>
+                        <div class="contact-content">
+                            <p class="contact-description">
+                                For professional opportunities, accounting work, business automation discussions, 
+                                or collaboration inquiries, I'd be happy to connect with you.
+                            </p>
+                            
+                            <div class="contact-links">
+                                <a href="https://www.linkedin.com/in/atul7599" target="_blank" rel="noopener noreferrer" class="contact-button glass-effect">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>Connect on LinkedIn</span>
+                                </a>
+                            </div>
+                            
+                            <div class="contact-info">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Budaun Sadar, Uttar Pradesh, India</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer class="footer bg-secondary text-white py-4">
-        <div class="container text-center">
-            <div class="social-links mb-3">
-                <a href="https://www.linkedin.com/in/atul7599" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="btn btn-icon btn-outline-light rounded-circle mx-1"><i class="fa-brands fa-linkedin-in"></i></a>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p class="footer-copyright">
+                        &copy; <span id="current-year"></span> Atul Kumar. All rights reserved.
+                    </p>
+                    <p class="footer-credit">
+                        Designed & developed with attention to detail.
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/atul7599" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
-            <p class="mb-0">&copy; <span id="current-year"></span> Atul Kumar. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <a href="#" id="back-to-top" class="btn btn-primary rounded-circle shadow" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></a>
-
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to Top" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-    <script src="js/animation.js" defer></script>
     <script src="js/script.js" defer></script>
 </body>
 </html>
