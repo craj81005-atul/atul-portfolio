@@ -642,6 +642,15 @@ html[data-theme="dark"] section:nth-child(even) {
     margin: 0 auto var(--spacing-md);
 }
 
+.about-profile-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
 .avatar-initials {
     width: 100%;
     height: 100%;
