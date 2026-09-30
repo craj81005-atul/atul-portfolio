@@ -637,16 +637,20 @@ html[data-theme="dark"] section:nth-child(even) {
 }
 
 .about-avatar {
-    width: 120px;
-    height: 120px;
+    width: 96px;
+    height: 96px;
     margin: 0 auto var(--spacing-md);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
 }
 
 .about-profile-image {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     border-radius: 50%;
 }
