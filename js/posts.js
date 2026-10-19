@@ -17,6 +17,7 @@
             }
             grid.innerHTML = posts.map((post) => `
                 <article class="festive-post-card">
+                    ${post.image ? `<img class="festive-post-image" src="${escapeHTML(post.image)}" alt="${escapeHTML(post.title || 'Festival greeting')}" loading="lazy">` : ''}
                     <div class="festive-post-emoji" aria-hidden="true">${escapeHTML(post.emoji || '🎉')}</div>
                     <span class="festive-post-category">${escapeHTML(post.category || 'Festival Post')}</span>
                     <h3 class="festive-post-title">${escapeHTML(post.title || post.festival || 'Festival Greeting')}</h3>
