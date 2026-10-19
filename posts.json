@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Diwali — Festival of Lights",
+    "festival": "Diwali",
+    "emoji": "🪔",
+    "category": "Festival Greeting",
+    "date": "",
+    "message": "May your life be filled with light, happiness, prosperity and new opportunities. Wishing you and your family a very Happy Diwali!",
+    "language": "English"
+  },
+  {
+    "title": "Holi — Festival of Colours",
+    "festival": "Holi",
+    "emoji": "🎨",
+    "category": "Festival Greeting",
+    "date": "",
+    "message": "May the colours of Holi bring joy, peace, good health and success into your life. Have a safe and wonderful Holi!",
+    "language": "English"
+  },
+  {
+    "title": "Eid Mubarak",
+    "festival": "Eid",
+    "emoji": "🌙",
+    "category": "Festival Greeting",
+    "date": "",
+    "message": "May this Eid bring peace, happiness, good health and prosperity to you and your loved ones. Eid Mubarak!",
+    "language": "English"
+  },
+  {
+    "title": "Raksha Bandhan",
+    "festival": "Raksha Bandhan",
+    "emoji": "🎀",
+    "category": "Festival Greeting",
+    "date": "",
+    "message": "Celebrating the special bond of love, care and protection between brothers and sisters. Happy Raksha Bandhan!",
+    "language": "English"
+  },
+  {
+    "title": "Happy New Year",
+    "festival": "New Year",
+    "emoji": "🎉",
+    "category": "Festival Greeting",
+    "date": "",
+    "message": "Wishing you a year filled with fresh beginnings, meaningful progress, happiness and success. Happy New Year!",
+    "language": "English"
+  }
+]
