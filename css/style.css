@@ -1704,3 +1704,12 @@ section {
     .festive-post-card { transition: none; }
     .festive-post-card:hover { transform: none; }
 }
+
+
+.festive-article-details { margin-top: 1rem; border-top: 1px solid var(--surface-border); padding-top: .85rem; }
+.festive-article-details summary { cursor: pointer; color: var(--color-primary); font-weight: 700; padding: .4rem 0; }
+.festive-article-body { padding-top: .5rem; }
+.festive-article-part { padding: .9rem 0; border-bottom: 1px solid var(--surface-border); }
+.festive-article-part:last-child { border-bottom: 0; }
+.festive-article-part h4 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .45rem; color: var(--color-text-dark); }
+.festive-article-part p { line-height: 1.8; white-space: normal; }
