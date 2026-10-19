@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://atul-portfolio.craj81005.workers.dev/sitemap.xml
+Sitemap: https://craj81005-atul.github.io/atul-portfolio/sitemap.xml
