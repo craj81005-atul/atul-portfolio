@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">Shubh Deepawali — Ramayana inspired greeting</title>
+<desc id="desc">Golden diyas illuminate a stylized Ayodhya skyline beneath a starry midnight blue sky.</desc>
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#10133e"/><stop offset="1" stop-color="#4b1c45"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a3"/><stop offset=".5" stop-color="#ffb52e"/><stop offset="1" stop-color="#d64a13"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#ffdd68" stop-opacity=".75"/><stop offset="1" stop-color="#ff9d24" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="650" rx="28" fill="url(#sky)"/>
+<circle cx="180" cy="160" r="150" fill="url(#glow)"/><circle cx="1000" cy="180" r="180" fill="url(#glow)"/>
+<g fill="#ffe9a3" opacity=".8"><circle cx="90" cy="70" r="3"/><circle cx="260" cy="105" r="2"/><circle cx="390" cy="55" r="3"/><circle cx="580" cy="110" r="2"/><circle cx="750" cy="62" r="3"/><circle cx="930" cy="95" r="2"/><circle cx="1100" cy="60" r="3"/><circle cx="1080" cy="230" r="2"/></g>
+<g fill="#f7b84c" stroke="#ffe6a0" stroke-width="3" opacity=".95">
+ <path d="M40 390V285h45v105M25 285l37-42 38 42M100 390V315h58v75M94 315l35-35 35 35"/>
+ <path d="M180 390V270h70v120M170 270l45-58 45 58M270 390V300h54v90M263 300l34-40 34 40"/>
+ <path d="M355 390V250h72v140M345 250l46-63 46 63M445 390V292h54v98M438 292l34-40 34 40"/>
+ <path d="M535 390V275h65v115M525 275l42-55 42 55M620 390V245h76v145M610 245l48-65 48 65"/>
+ <path d="M720 390V295h55v95M713 295l35-42 35 42M795 390V260h75v130M785 260l47-61 48 61"/>
+ <path d="M890 390V300h55v90M883 300l35-42 35 42M965 390V250h75v140M955 250l47-60 48 60M1055 390V290h65v100M1048 290l40-48 40 48"/>
+</g>
+<g fill="#ffd56c" opacity=".9"><rect x="57" y="310" width="10" height="18"/><rect x="205" y="300" width="12" height="20"/><rect x="379" y="285" width="12" height="20"/><rect x="551" y="305" width="12" height="18"/><rect x="644" y="275" width="12" height="22"/><rect x="815" y="285" width="12" height="20"/><rect x="987" y="275" width="12" height="20"/><rect x="1080" y="315" width="12" height="18"/></g>
+<path d="M0 395 Q160 360 300 395 T600 395 T900 395 T1200 390 V650 H0Z" fill="#17142c"/>
+<text x="600" y="115" fill="#ffe6a0" font-family="Georgia,serif" font-size="27" text-anchor="middle" letter-spacing="8">RAMAYANA • LIGHT • WISDOM</text>
+<text x="600" y="190" fill="url(#gold)" stroke="#5e250c" stroke-width="2" paint-order="stroke" font-family="Georgia,serif" font-size="76" font-weight="bold" text-anchor="middle">शुभ दीपावली</text>
+<text x="600" y="232" fill="#fff4d2" font-family="sans-serif" font-size="24" text-anchor="middle">अधर्म पर धर्म • अंधकार पर प्रकाश • अज्ञान पर ज्ञान</text>
+<g transform="translate(600 485)">
+ <ellipse rx="250" ry="70" fill="url(#glow)"/>
+ <path d="M-155 0 Q0 85 155 0 L125 45 Q0 95 -125 45Z" fill="url(#gold)" stroke="#ffe8a5" stroke-width="4"/>
+ <path d="M-155 0 Q0 28 155 0" fill="none" stroke="#fff1b7" stroke-width="5"/>
+ <path d="M0 -112 C-65 -55 -35 -15 0 -7 C35 -15 65 -55 0 -112Z" fill="url(#gold)" stroke="#fff1b7" stroke-width="4"/>
+ <path d="M0 -72 Q-14 -38 0 -17 Q14 -38 0 -72" fill="#fff9db"/>
+</g>
+<g fill="#ffce55" stroke="#fff0a5" stroke-width="3">
+ <path d="M95 565 Q145 620 195 565 Q190 620 145 625 Q100 620 95 565Z"/><path d="M1005 565 Q1055 620 1105 565 Q1100 620 1055 625 Q1010 620 1005 565Z"/>
+ <path d="M300 580 Q335 615 370 580 Q365 620 335 625 Q305 620 300 580Z"/><path d="M830 580 Q865 615 900 580 Q895 620 865 625 Q835 620 830 580Z"/>
+</g>
+<text x="600" y="610" fill="#ffe6a0" font-family="sans-serif" font-size="23" text-anchor="middle">प्रेम, समृद्धि, विवेक और ज्ञान का प्रकाश आपके घर में बना रहे • Atul Kumar</text>
+</svg>
